@@ -1,0 +1,553 @@
+Valentine's Day for Husna - Complete HTML File
+
+Here's the complete website code in a single HTML file named index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day for Husna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #8a1c3f;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(139, 46, 84, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #ff7aa8;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #ff4d8d;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #ffcce0;
+        }
+        
+        .husna-name {
+            color: #e91e63;
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 0 #ffcce0;
+            margin: 10px 0 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #8a1c3f;
+            padding: 0 10px;
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 150px;
+        }
+        
+        .valentine-btn {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: absolute;
+            user-select: none;
+            box-shadow: 0 10px 20px rgba(139, 46, 84, 0.3);
+            border: 5px solid white;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .btn-yes {
+            background: linear-gradient(145deg, #ff7aa8, #ff4d8d);
+            color: white;
+            left: 20%;
+            top: 20px;
+        }
+        
+        .btn-no {
+            background: linear-gradient(145deg, #a3d9ff, #7ac6ff);
+            color: white;
+            right: 20%;
+            top: 20px;
+        }
+        
+        .btn-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .instruction {
+            font-size: 1.2rem;
+            color: #e91e63;
+            font-weight: bold;
+            margin-top: 10px;
+            background-color: #ffecf1;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border: 3px dashed #ff7aa8;
+        }
+        
+        .balloons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .balloon {
+            width: 70px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+        }
+        
+        .balloon:before {
+            content: "▲";
+            font-size: 20px;
+            color: inherit;
+            display: block;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: -12px;
+        }
+        
+        .balloon:after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .balloon:nth-child(1) {
+            background: radial-gradient(circle at 65% 35%, #ff7aa8 5px, #ff4d8d 30%, #e91e63 70%);
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            background: radial-gradient(circle at 65% 35%, #a3d9ff 5px, #7ac6ff 30%, #4da6ff 70%);
+            animation-delay: 0.5s;
+        }
+        
+        .balloon:nth-child(3) {
+            background: radial-gradient(circle at 65% 35%, #ffcc5c 5px, #ffb142 30%, #ff9f1a 70%);
+            animation-delay: 1s;
+        }
+        
+        .balloon:nth-child(4) {
+            background: radial-gradient(circle at 65% 35%, #9de3b0 5px, #7ad98f 30%, #57cc6d 70%);
+            animation-delay: 1.5s;
+        }
+        
+        .balloon:nth-child(5) {
+            background: radial-gradient(circle at 65% 35%, #d9b3ff 5px, #c285ff 30%, #a64dff 70%);
+            animation-delay: 2s;
+        }
+        
+        .hello-kitty-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .kitty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+        }
+        
+        .kitty-img {
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 3px 3px 0 #ffcce0;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+        }
+        
+        .kitty-text {
+            background-color: #ffecf1;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #e91e63;
+            border: 3px solid #ffb8d3;
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #8a1c3f;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fff9fb;
+            border-radius: 20px;
+            border: 4px dotted #ff7aa8;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #e91e63;
+            padding: 15px;
+            background-color: #ffecf1;
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(2deg);
+            }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                border-width: 5px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .husna-name {
+                font-size: 2.8rem;
+            }
+            
+            .intro-text {
+                font-size: 1.1rem;
+                padding: 0 5px;
+            }
+            
+            .valentine-btn {
+                width: 150px;
+                height: 150px;
+                font-size: 1.5rem;
+                position: relative;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                margin: 10px;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+                min-height: 350px;
+            }
+            
+            .instruction {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+            
+            .balloon {
+                width: 60px;
+                height: 80px;
+            }
+            
+            .kitty {
+                width: 100px;
+            }
+            
+            .kitty-img {
+                font-size: 4rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .husna-name {
+                font-size: 2.2rem;
+            }
+            
+            .valentine-btn {
+                width: 130px;
+                height: 130px;
+                font-size: 1.3rem;
+            }
+            
+            .balloons-container {
+                gap: 10px;
+            }
+            
+            .balloon {
+                width: 50px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day!</h1>
+        <div class="husna-name">HUSNA</div>
+        
+        <p class="intro-text">
+            You're the most amazing person I know! This Valentine's Day, I wanted to create something special just for you.
+        </p>
+        
+        <div class="instruction">
+            Try to click the buttons below... but they're a bit shy! <i class="fas fa-heart"></i>
+        </div>
+        
+        <div class="buttons-container">
+            <div class="valentine-btn btn-yes" id="yesBtn">
+                <div class="btn-icon"><i class="fas fa-heart"></i></div>
+                <div>YES!</div>
+                <div>Be My Valentine</div>
+            </div>
+            
+            <div class="valentine-btn btn-no" id="noBtn">
+                <div class="btn-icon"><i class="fas fa-heart-broken"></i></div>
+                <div>NO</div>
+                <div>Maybe Later</div>
+            </div>
+        </div>
+        
+        <div class="balloons-container">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+        
+        <div class="hello-kitty-container">
+            <div class="kitty">
+                <div class="kitty-img">🐱</div>
+                <div class="kitty-text">Hello Kitty</div>
+            </div>
+            <div class="kitty">
+                <div class="kitty-img">💖</div>
+                <div class="kitty-text">Loves Husna</div>
+            </div>
+            <div class="kitty">
+                <div class="kitty-img">🎀</div>
+                <div class="kitty-text">Cute Cuddles</div>
+            </div>
+        </div>
+        
+        <div class="message">
+            <p>Dear Husna,</p>
+            <p>On this special day, I want you to know how much you mean to me. Your smile brightens my world, your laughter is my favorite melody, and your heart is the most beautiful thing I've ever known.</p>
+            <p>Even though these buttons won't stay still, my feelings for you are constant and true. Happy Valentine's Day, my dear! <i class="fas fa-heart"></i></p>
+        </div>
+        
+        <div class="footer">
+            Made with <i class="fas fa-heart" style="color:#e91e63;"></i> for Husna on Valentine's Day 2023
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const buttonsContainer = document.querySelector('.buttons-container');
+            
+            // Function to move a button to a random position within the container
+            function moveButton(button) {
+                const containerRect = buttonsContainer.getBoundingClientRect();
+                const buttonRect = button.getBoundingClientRect();
+                
+                // Calculate max positions to keep button fully visible
+                const maxX = containerRect.width - buttonRect.width - 20;
+                const maxY = containerRect.height - buttonRect.height - 20;
+                
+                // Generate random positions
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+                
+                // Apply new positions
+                button.style.left = `${randomX}px`;
+                button.style.top = `${randomY}px`;
+            }
+            
+            // Function to swap button positions
+            function swapButtons() {
+                const tempLeft = yesBtn.style.left;
+                const tempTop = yesBtn.style.top;
+                
+                yesBtn.style.left = noBtn.style.left;
+                yesBtn.style.top = noBtn.style.top;
+                
+                noBtn.style.left = tempLeft;
+                noBtn.style.top = tempTop;
+            }
+            
+            // Set initial positions for buttons
+            yesBtn.style.position = 'absolute';
+            noBtn.style.position = 'absolute';
+            
+            // Initial random positions
+            moveButton(yesBtn);
+            moveButton(noBtn);
+            
+            // Make buttons move on hover
+            yesBtn.addEventListener('mouseover', function() {
+                moveButton(yesBtn);
+            });
+            
+            noBtn.addEventListener('mouseover', function() {
+                moveButton(noBtn);
+            });
+            
+            // For touch devices (mobile)
+            yesBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                // 50% chance to move, 50% chance to swap
+                if (Math.random() > 0.5) {
+                    moveButton(yesBtn);
+                } else {
+                    swapButtons();
+                }
+            });
+            
+            noBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                // 50% chance to move, 50% chance to swap
+                if (Math.random() > 0.5) {
+                    moveButton(noBtn);
+                } else {
+                    swapButtons();
+                }
+            });
+            
+            // Also make buttons move when clicked (for desktop)
+            yesBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                moveButton(yesBtn);
+                
+                // Show a cute message occasionally
+                if (Math.random() > 0.7) {
+                    alert("Oops! The button moved! But my feelings for you don't! 💖");
+                }
+            });
+            
+            noBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                moveButton(noBtn);
+                
+                // Show a cute message occasionally
+                if (Math.random() > 0.7) {
+                    alert("Hey! Where are you going? Come back! 😊");
+                }
+            });
+            
+            // Occasionally swap button positions automatically
+            setInterval(() => {
+                if (Math.random() > 0.8) {
+                    swapButtons();
+                }
+            }, 3000);
+            
+            // Add some balloon animation variety
+            const balloons = document.querySelectorAll('.balloon');
+            balloons.forEach((balloon, index) => {
+                // Randomize animation duration and delay
+                const duration = 5 + Math.random() * 4;
+                const delay = Math.random() * 2;
+                
+                balloon.style.animationDuration = `${duration}s`;
+                balloon.style.animationDelay = `${delay}s`;
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+How to Use This File:
+
+1. Save the file: Copy the entire code above and save it as index.html on your computer.
+2. Open the file: Double-click the index.html file to open it in your web browser.
+3. Share it: You can send this file to anyone, and they can open it directly in their browser.
+
+Key Features:
+
+· Two moving buttons that are hard to click (they move when you try)
+· Valentine theme with pink and red colors
+· Balloons that float up and down
+· Hello Kitty elements with cute emojis
+· Personalized for Husna with her name prominently displayed
+· Fully responsive - works perfectly on mobile phones
+· Interactive elements with fun animations
+· Sweet Valentine's message for Husna
+
+The website is entirely self-contained in a single HTML file with no external dependencies (except Font Awesome icons which are loaded from a CDN).
